@@ -1,4 +1,4 @@
-import { SongType, QueryOptionsType, BaseURL } from 'src/types';
+import { SongType, QueryOptionType, BaseURL } from 'src/types';
 
 /**
  * Fetches song data for today's date with optional query options.
@@ -9,7 +9,7 @@ import { SongType, QueryOptionsType, BaseURL } from 'src/types';
  * const songData = await today({ filter: 'artist', genre: 'german' });
  * console.log(songData);
  */
-export const today = async (options: QueryOptionsType = {}): Promise<SongType> => {
+export const today = async (options: QueryOptionType = {}): Promise<SongType> => {
 	const url = new URL(`${BaseURL}/today`);
 
 	for (const [key, value] of Object.entries(options)) {
