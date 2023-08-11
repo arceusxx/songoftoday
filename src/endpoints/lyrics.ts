@@ -1,5 +1,15 @@
 import { LyricsResponse, LyricsQueryOptions, BaseURL } from 'src/types';
 
+/**
+ * Fetches lyrics data for a specific date with optional query options.
+ * @param date - The date in the format DD-MM-YYYY for which to fetch lyrics data.
+ * @param options - Optional query options to filter the lyrics data.
+ * @returns A Promise resolving to the lyrics data for the specified date.
+ * @throws Throws an error if the request fails or if the response is invalid.
+ * @example
+ * const lyricsData = await lyrics('11-03-2023', { genre: 'pop' });
+ * console.log(lyricsData);
+ */
 export const lyrics = async (date: string, options: LyricsQueryOptions = {}): Promise<LyricsResponse> => {
 	const url = new URL(`${BaseURL}/lyrics/${date}`);
 
@@ -27,7 +37,6 @@ export const lyrics = async (date: string, options: LyricsQueryOptions = {}): Pr
 				throw new Error(`Unknown error: ${statusCode}`);
 		}
 	}
-
 	return lyrics;
 };
 
