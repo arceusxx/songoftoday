@@ -38,17 +38,15 @@ export interface LyricsQueryOptions {
 export interface RangeParams {
     startDate: string;
     endDate: string;
-    filter?: string;
-    genre?: string;
+    filter?: FilterOptions;
+    genre?: GenreOption;
 }
 
 export interface RangeResponse {
     songs: SongType[];
 }
-
-export type FilterOption = 'none' | 'url' | 'title' | 'artist' | 'thumbnail' | 'redirect' | 'lyrics';
-
 // for /all
 export type FilterOptions = 'none' | 'urls' | 'titles' | 'artists' | 'thumbnails' | 'lyrics';
-export type GenreOption = 'global' | 'pop' | 'rock' | 'electro' | 'kpop' | 'hardstyle' | 'metal' | 'german';
 
+export type FilterOption = 'none' | 'url' | 'title' | 'artist' | 'thumbnail' | 'redirect' | 'lyrics';
+export type GenreOption = 'global' | 'pop' | 'rock' | 'electro' | 'kpop' | 'hardstyle' | 'metal' | 'german';
