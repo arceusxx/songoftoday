@@ -46,7 +46,7 @@ export interface RangeResponse {
     songs: SongType[];
 }
 
-export type FilterOption = 'none' | 'url' | 'title' | 'artist' | 'thumbnail' | 'redirect' | 'lyric';
+export type FilterOption = 'none' | 'url' | 'title' | 'artist' | 'thumbnail' | 'redirect' | 'lyrics';
 
 // for /all
 export type FilterOptions = 'none' | 'urls' | 'titles' | 'artists' | 'thumbnails' | 'lyrics';
