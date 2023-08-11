@@ -7,9 +7,9 @@ import { RangeParams, SongType, RangeResponse, BaseURL } from '../types/index';
  * @throws Throws an error if the request fails or if the response is invalid.
  * @example
  * const songRange = await range({
- *    startDate: '11-03-2023',
- *    endDate: '13-03-2023',
- *    filter: 'artist',
+ *    startDate: '22-07-2023',
+ *    endDate: '24-07-2023',
+ *    filter: 'artists',
  *    genre: 'german'
  * });
  * console.log(songRange);
@@ -38,7 +38,7 @@ export const range = async (params: RangeParams): Promise<SongType[]> => {
 	if (!response.ok || !data) {
 		switch (statusCode) {
 			case 400:
-				throw new Error('Invalid request. Make sure the date format is DD-MM-YYYY and not in the future.');
+				throw new Error('Invalid request. Make sure the date format is DD-MM-YYYY, not in the future and too far in the past.');
 			case 500:
 				throw new Error('Can not find lyrics for this song.');
 			default:

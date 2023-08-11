@@ -1,4 +1,4 @@
-import { SongType, QueryOptionsType, BaseURL } from '../types/index';
+import { SongType, QueryOptionTypes, BaseURL } from '../types/index';
 
 /**
  * Retrieves a list of songs from the songof.today API based on the specified query options.
@@ -6,10 +6,10 @@ import { SongType, QueryOptionsType, BaseURL } from '../types/index';
  * @returns {Promise<SongType[]>} - A promise that resolves to an array of song objects.
  * @throws {Error} - If no songs are found or if the request fails.
  * @example
- * const songs = await all({ genre: 'pop', filter: 'artist' });
+ * const songs = await all({ genre: 'pop', filter: 'artists' });
  * console.log(songs);
  */
-export const all = async (options: QueryOptionsType = {}): Promise<SongType[]> => {
+export const all = async (options: QueryOptionTypes = {}): Promise<SongType[]> => {
 	const url = new URL(`${BaseURL}/all`);
 
 	for (const [key, value] of Object.entries(options)) {

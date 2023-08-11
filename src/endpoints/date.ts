@@ -1,4 +1,4 @@
-import { SongType, QueryOptionsType, BaseURL } from 'src/types';
+import { SongType, QueryOptionType, BaseURL } from 'src/types';
 
 /**
  * Fetches song data for a specific date with optional query options.
@@ -10,7 +10,7 @@ import { SongType, QueryOptionsType, BaseURL } from 'src/types';
  * const songData = await date('11-03-2023', { filter: 'artist', genre: 'german' });
  * console.log(songData);
  */
-export const date = async (date: string, options: QueryOptionsType = {}): Promise<SongType> => {
+export const date = async (date: string, options: QueryOptionType = {}): Promise<SongType> => {
 	const formattedDate = encodeURIComponent(date);
 	const url = new URL(`${BaseURL}/date/${formattedDate}`);
 
@@ -35,7 +35,7 @@ export const date = async (date: string, options: QueryOptionsType = {}): Promis
 	if (!response.ok || !song) {
 		switch (statusCode) {
 			case 400:
-				throw new Error('Invalid request. Make sure the date format is DD-MM-YYYY and not in the future.');
+				throw new Error('Invalid request. Make sure the date format is DD-MM-YYYY, not in the future and too far in the past.');
 			case 500:
 				throw new Error('Failed to fetch data from the API.');
 			case 404:

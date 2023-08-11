@@ -30,7 +30,7 @@ export const lyrics = async (date: string, options: LyricsQueryOptions = {}): Pr
 	if (!response.ok || !lyrics) {
 		switch (statusCode) {
 			case 400:
-				throw new Error('Invalid request. Make sure the date format is DD-MM-YYYY and not in the future.');
+				throw new Error('Invalid request. Make sure the date format is DD-MM-YYYY, not in the future and too far in the past..');
 			case 500:
 				throw new Error('Can not find lyrics for this song.');
 			default:

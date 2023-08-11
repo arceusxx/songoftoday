@@ -13,11 +13,17 @@ export interface SongType {
     previewUrl: string;
 }
 
-export interface QueryOptionsType {
-    filter?: FilterOptions;
-    genre?: GenreOptions;
+export interface QueryOptionType {
+    filter?: FilterOption;
+    genre?: GenreOption;
     page?: number;
     limit?: number;
+}
+
+// for /all
+export interface QueryOptionTypes {
+    filter?: FilterOptions;
+    genre?: string;
 }
 
 export interface LyricsResponse {
@@ -26,7 +32,7 @@ export interface LyricsResponse {
 }
 
 export interface LyricsQueryOptions {
-    genre?: GenreOptions;
+    genre?: GenreOption;
 }
 
 export interface RangeParams {
@@ -40,5 +46,9 @@ export interface RangeResponse {
     songs: SongType[];
 }
 
-export type FilterOptions = 'none' | 'url' | 'urls' | 'title' | 'titles' | 'artist' | 'artists' | 'thumbnail' | 'thumbnails' | 'redirect' | 'lyrics';
-export type GenreOptions = 'global' | 'pop' | 'rock' | 'electro' | 'kpop' | 'hardstyle' | 'metal' | 'german';
+export type FilterOption = 'none' | 'url' | 'title' | 'artist' | 'thumbnail' | 'redirect' | 'lyric';
+
+// for /all
+export type FilterOptions = 'none' | 'urls' | 'titles' | 'artists' | 'thumbnails' | 'lyrics';
+export type GenreOption = 'global' | 'pop' | 'rock' | 'electro' | 'kpop' | 'hardstyle' | 'metal' | 'german';
+
