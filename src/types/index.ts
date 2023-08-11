@@ -23,7 +23,7 @@ export interface QueryOptionType {
 // for /all
 export interface QueryOptionTypes {
     filter?: FilterOptions;
-    genre?: string;
+    genre?: GenreOption;
 }
 
 export interface LyricsResponse {
