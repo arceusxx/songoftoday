@@ -23,7 +23,7 @@ npm i songoftoday
 - Directly from the API
 # 📃・Usage
 ```js
-import { expectObject } from 'songoftoday';
+import { today } from 'songoftoday';
 
 const song = await today();
 ```
