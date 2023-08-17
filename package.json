@@ -10,13 +10,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/XXX/XXX.git"
+    "url": "git+https://github.com/fb-sean/songoftoday.git"
   },
+  "bugs": {
+    "url": "https://github.com/fb-sean/songoftoday/issues"
+  },
+  "homepage": "https://songof.today/docs",
   "keywords": [
     "API",
-    "Song"
+    "Song",
+    "Song of Today API",
+    "Nodejs"
   ],
   "author": "vkxni",
+  "contributors": [
+    "fb-sean <sean@sattler.dev>"
+  ],
   "license": "MIT",
   "devDependencies": {
     "@types/node-fetch": "^2.6.4",
